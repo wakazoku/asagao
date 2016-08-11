@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Asagao</title>
+  <meta charset="utf-8">
+  <title><%= page_title %><%= page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- container -->
+  <div id="container">
 
-<%= yield %>
+    <!-- header -->
+    <div id="header">
+      <%= render "shared/header" %>
+    </div>
 
+    <!-- content -->
+    <div id="content">
+      <%= yield %>
+    </div>
+    
+    <!-- sidebar -->
+    <div id="sidebar">
+      <%= render "shared/sidebar" %>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+      <%= render "shared/footer" %>
+    </div>
+
+  </div>
 </body>
 </html>

@@ -1,8 +1,9 @@
 class TopController < ApplicationController
   def index
-    @message = "おはようございます！"
+  	#"何もしない"
   end
   def about
   	#"何もしない"
   end
 end
+ 
