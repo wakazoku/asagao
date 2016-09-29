@@ -6,7 +6,8 @@ class Member < ActiveRecord::Base
 		uniqueness: true
 
 	validates :name, presence: true,
-		format: {with: /\A[A-Za-z]\w*\z/, allow_blank: true},
+		format: {with: /\A[A-Za-z]\w*\z/, allow_blank: true,
+		         message: :invalid_member_name},
 		length: {minimum: 2, maximum: 20, allow_blank: true},
 		uniqueness: {case_sensitive: false}
 	validates :full_name, length: {maximum: 20}
@@ -17,13 +18,13 @@ class Member < ActiveRecord::Base
 		if email.present?
  			errors.add(:email, :invalid) unless well_formed_as_email_address(email)
  		end
-  	end
+  end
 
 	class << self
 		def search(query)
 			rel = order("number")
 			if query.present?
-				rel = rel.where("name LIKE ? OR full_name LIKE ?" , 
+				rel = rel.where("name LIKE ? OR full_name LIKE ?" ,
 					"%#{query}%", "%#{query}%")
 			end
 			rel
