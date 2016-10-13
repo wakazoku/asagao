@@ -24,5 +24,9 @@ module Asagao
     config.active_record.raise_in_transactional_callbacks = true
 
     config.action_controller.permit_all_parameters = true
+
+    config.web_console.development_only = false
+
+    config.active_record.schema_format = :sql
   end
 end
