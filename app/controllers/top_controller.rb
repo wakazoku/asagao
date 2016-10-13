@@ -1,9 +1,8 @@
 class TopController < ApplicationController
   def index
-  	#"何もしない"
+  	@articles = Article.open.order(released_at: :desc).limit(5)
   end
   def about
   	#"何もしない"
   end
 end
- 
