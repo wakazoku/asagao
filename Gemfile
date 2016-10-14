@@ -32,6 +32,15 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# 本番環境で下記エラーが出るため追加
+## wakAir:bin wak$ rake secret > secret.key
+## (in /Users/wak/DEV/asagao)
+## rake aborted!
+## NoMethodError: undefined method `web_console' for #<Rails::Application::Configuration:0x007fc9c2059360>
+### http://stackoverflow.com/questions/39306541/nomethoderror-undefined-method-web-console-for-railsapplicationconfigur
+### https://www.oiax.jp/books/rails4book/undefined_method_web_console.html
+gem 'web-console', '~> 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
