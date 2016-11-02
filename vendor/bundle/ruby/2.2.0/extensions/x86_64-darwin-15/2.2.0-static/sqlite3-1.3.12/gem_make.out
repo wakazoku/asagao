@@ -1,0 +1,50 @@
+/Users/wak/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20161017-21133-6jfghx.rb extconf.rb
+Error: Running Homebrew as root is extremely dangerous. As Homebrew does not
+drop privileges on installation you are giving all build scripts full access
+to your system. As a result of the macOS sandbox not handling the root user
+correctly HOMEBREW_NO_SANDBOX has been set so the sandbox will not be used. If
+we have not merged a pull request to add privilege dropping by November 1st
+2016 running Homebrew as root will be disabled. No Homebrew maintainers plan
+to work on this functionality.
+checking for sqlite3.h... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/wak/.rbenv/versions/2.2.2/bin/$(RUBY_BASE_NAME)
+	--with-sqlite3-config
+	--without-sqlite3-config
+	--with-pkg-config
+	--without-pkg-config
+	--with-sqlite3-dir
+	--without-sqlite3-dir
+	--with-sqlite3-include
+	--without-sqlite3-include=${sqlite3-dir}/include
+	--with-sqlite3-lib
+	--without-sqlite3-lib=${sqlite3-dir}/lib
+/Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:456:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
+You have to install development tools first.
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:587:in `try_cpp'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:1113:in `block in find_header'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:911:in `block in checking_for'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:351:in `block (2 levels) in postpone'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:321:in `open'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:351:in `block in postpone'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:321:in `open'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:347:in `postpone'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:910:in `checking_for'
+	from /Users/wak/.rbenv/versions/2.2.2/lib/ruby/2.2.0/mkmf.rb:1112:in `find_header'
+	from extconf.rb:50:in `<main>'
+
+extconf failed, exit code 1

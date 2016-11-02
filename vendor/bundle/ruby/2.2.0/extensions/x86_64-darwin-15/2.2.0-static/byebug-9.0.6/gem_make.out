@@ -1,0 +1,10 @@
+/Users/wak/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20161017-21133-1bs64bt.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+make "DESTDIR="
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+
+make failed, exit code 1
