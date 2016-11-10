@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+	before_action :login_required
+	
 	# 会員一覧
 	def index
 		@members = Member.order("number")
@@ -47,6 +49,6 @@ class MembersController < ApplicationController
 	def destroy
 		@member = Member.find(params[:id])
 		@member.destroy
-		redirect_to :members, notice: "会員を削除しました" 
+		redirect_to :members, notice: "会員を削除しました"
 	end
 end
