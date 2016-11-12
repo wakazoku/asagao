@@ -1,29 +1,14 @@
-== README
+asagao
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview
+## Description
 
-Things you may want to cover:
+書籍「改訂3版 基礎 Ruby on Rails 基礎シリーズ」をコツコツ写経しながら
+Ruby、Ruby on Railsを学んでいくリポジトリです。
+https://www.amazon.co.jp/dp/B00YG8PXLI/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1
 
-* Ruby version
+オイアクス社のページ
+https://www.oiax.jp/rails4book
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+※当リポジトリ公開が著作権的に問題があれば直ちに取り下げます。
