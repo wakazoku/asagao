@@ -6,7 +6,7 @@ ja:
       member:
         number: 背番号
         name: ユーザ名
-        full_name: 指名
+        full_name: 氏名
         gender: 性別
         gender_0: 男
         gender_1: 女

@@ -13,7 +13,7 @@ class ManageArticlesTest < ActionDispatch::IntegrationTest
     post "/articles",
       article: FactoryGirl.attributes_for(:article, title: "")
     assert_template "new"
-    assert_select "h3"
+    assert_select "h3", "エラーがあります。"
 
     post "/articles",
       article: FactoryGirl.attributes_for(:article, title: "テスト記事")
