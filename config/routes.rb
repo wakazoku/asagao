@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "top#index"
   get "about" => "top#about", as:"about"
+  get "bad_request" => "top#bad_request"
+  get "internal_server_error" => "top#internal_server_error"
   get "lesson/:action(/:name)" => "lesson"
 
   # membersモデルをリソースとして扱う。
@@ -10,6 +12,6 @@ Rails.application.routes.draw do
   end
   resources :articles
   resource :session, only: [:create, :destroy]
-  # accountモデルをリソースとして扱うのは後述のコントローラに記載されているメソッドのみ
-  resource :account, only: [:show, :edit, :update]
+  resource :account #設定されていないパスは全てnot_foundアクションを使う
+  match "*anything" => "top#not_found", via: [:get, :post, :patch, :delete]
 end
