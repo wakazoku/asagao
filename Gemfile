@@ -6,6 +6,7 @@ gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'rails-i18n'
+gem 'will_paginate', '~>3.0'
 
 gem 'json', '1.8.3'
 # Use SCSS for stylesheets
