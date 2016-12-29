@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   # collectionとしてsearchメソッドを使う
   resources :members do
   	collection { get "search" }
+    resources :entries, only: [:index]
   end
   resources :articles
+  resources :entries
   resource :session, only: [:create, :destroy]
   resource :account #設定されていないパスは全てnot_foundアクションを使う
   match "*anything" => "top#not_found", via: [:get, :post, :patch, :delete]

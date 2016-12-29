@@ -17,6 +17,11 @@ class MembersController < ApplicationController
 	# 会員情報の詳細
 	def show
 		@member = Member.find(params[:id])
+		if params[:format].in?(["jpg", "png", "gif"])
+       send_image
+		else
+			render "show"
+		end
 	end
 
 	# 新規作成フォーム
@@ -66,6 +71,16 @@ class MembersController < ApplicationController
 			attrs << :administrator if current_member.administrator?
 			# require #=> :memberが空の場合にnilを返す。
 			params.require(:member).permit(attrs)
+		end
+
+	#画像送信
+	  def send_image
+			if @member.image.present?
+				send_data @member.image.data,
+				  type: @member.image.content_type, disposition: "inline"
+			else
+				raise NotFound
+			end
 		end
 
 
