@@ -4,7 +4,7 @@ class TopController < ApplicationController
       .order(released_at: :DESC).limit(5)
   end
   def about
-  	#"何もしない"
+  	#"なにもしない"
   end
 
 
