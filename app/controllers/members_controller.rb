@@ -27,6 +27,7 @@ class MembersController < ApplicationController
 	# 新規作成フォーム
 	def new
 		@member = Member.new(birthday: Date.new(1980, 1, 1))
+		@member.build_image
 	end
 
 	# 更新フォーム
@@ -62,13 +63,12 @@ class MembersController < ApplicationController
 	end
 
   private
-	# 管理者の場合はmemberモデルに管理者シンボルを追加し、値を更新する。
-	# ストロングパラメータ対応。
 	  def member_params
 			attrs = [:number, :name, :fullname, :gender, :birthday, :email,
 			         :password, :password_confirmation]
 			# もし管理者なら配列attrにシンボルadministratorを追加。if文を1行で記述。
 			attrs << :administrator if current_member.administrator?
+			attrs << { image_attributes: [:_destroy, :id, :uploaded_image]}
 			# require #=> :memberが空の場合にnilを返す。
 			params.require(:member).permit(attrs)
 		end

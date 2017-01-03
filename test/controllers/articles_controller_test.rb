@@ -10,7 +10,7 @@ class ArticlesControllerTest < ActionController::TestCase
     5.times { FactoryGirl.create(:article) }
     get :index
     assert_response :success
-    assert_equal 5, assigns(:articles).count
+    assert_equal 5, assigns[:articles].count
   end
 
   test "show" do
@@ -20,13 +20,14 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "new " do
+  test "new" do
     get :new
     assert_response :success
   end
 
   test "new before login" do
     logout
+    get :new
     assert_response :forbidden
   end
 
@@ -58,7 +59,7 @@ class ArticlesControllerTest < ActionController::TestCase
   test "fail to update" do
     attrs = FactoryGirl.attributes_for(:article, body: "")
     article = FactoryGirl.create(:article)
-    put :update, id: article, article: attrs
+    patch :update, id: article, article: attrs
     assert_response :success
     assert_template "edit"
   end
@@ -67,10 +68,7 @@ class ArticlesControllerTest < ActionController::TestCase
     article = FactoryGirl.create(:article)
     delete :destroy, id: article
     assert_redirected_to :articles
-    assert_raises(ActiveRecord::RecordNotFound){
-      Article.find(article.id)
-    }
+    assert_raises(ActiveRecord::RecordNotFound) {
+      Article.find(article.id) }
   end
-
-
 end

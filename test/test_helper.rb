@@ -7,6 +7,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
   private
   # ログイン状態にする
   def login_as(name, admin = false)
@@ -17,5 +18,11 @@ class ActiveSupport::TestCase
   # ログアウト状態にする
   def logout
     session.delete(:member_id)
+  end
+
+  # アップロードしたファイル
+  def uploaded_file(fname, type)
+    Rack::Test::UploadedFile.new(
+      Rails.root.join("test/factories", fname), type)
   end
 end
